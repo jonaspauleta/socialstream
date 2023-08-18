@@ -13,6 +13,38 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 
+/**
+ * Table: users
+*
+* === Columns ===
+ * @property int $id
+ * @property string $name
+ * @property string $email
+ * @property \Carbon\Carbon|null $email_verified_at
+ * @property string|null $password
+ * @property string|null $two_factor_secret
+ * @property string|null $two_factor_recovery_codes
+ * @property string|null $two_factor_confirmed_at
+ * @property string|null $remember_token
+ * @property int|null $current_team_id
+ * @property int|null $current_connected_account_id
+ * @property string|null $profile_photo_path
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+*
+* === Relationships ===
+ * @property-read \Laravel\Sanctum\PersonalAccessToken|null $tokens
+ * @property-read \App\Models\Team|null $currentTeam
+ * @property-read \App\Models\Team|null $ownedTeams
+ * @property-read \App\Models\Team|null $teams
+ * @property-read \App\Models\ConnectedAccount|null $currentConnectedAccount
+ * @property-read \App\Models\ConnectedAccount[]|\Illuminate\Database\Eloquent\Collection $connectedAccounts
+ * @property-read \Illuminate\Notifications\DatabaseNotification|null $notifications
+*
+* === Accessors/Attributes ===
+ * @property-read mixed $profilePhotoUrl
+ * @property-read mixed $getPhotoUrl
+*/
 class User extends Authenticatable
 {
     use HasApiTokens;

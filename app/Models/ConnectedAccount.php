@@ -9,6 +9,26 @@ use JoelButcher\Socialstream\Events\ConnectedAccountCreated;
 use JoelButcher\Socialstream\Events\ConnectedAccountDeleted;
 use JoelButcher\Socialstream\Events\ConnectedAccountUpdated;
 
+/**
+ * Table: connected_accounts
+*
+* === Columns ===
+ * @property int $id
+ * @property int $user_id
+ * @property string $provider
+ * @property string $provider_id
+ * @property string|null $name
+ * @property string|null $nickname
+ * @property string|null $email
+ * @property string|null $telephone
+ * @property string|null $avatar_path
+ * @property string $token
+ * @property string|null $secret
+ * @property string|null $refresh_token
+ * @property string|null $expires_at
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+*/
 class ConnectedAccount extends SocialstreamConnectedAccount
 {
     use HasFactory;

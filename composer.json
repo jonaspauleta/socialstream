@@ -15,6 +15,7 @@
         "tightenco/ziggy": "^1.0"
     },
     "require-dev": {
+        "doctrine/dbal": "^3.6",
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.11",
         "laravel/sail": "^1.18",
@@ -23,6 +24,7 @@
         "nunomaduro/larastan": "^2.0",
         "pestphp/pest": "^2.0",
         "pestphp/pest-plugin-laravel": "^2.0",
+        "sethphat/eloquent-docs": "^1.2",
         "spatie/laravel-ignition": "^2.0"
     },
     "autoload": {
@@ -56,6 +58,9 @@
         ],
         "larastan": [
             "./vendor/bin/phpstan analyse"
+        ],
+        "generate-model-docs": [
+            "@php artisan eloquent:bulk-phpdoc \"app/Models/*.php\""
         ]
     },
     "extra": {
