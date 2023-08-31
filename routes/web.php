@@ -1,6 +1,7 @@
 <?php
 
 use App\Events\TestEvent;
+use App\Http\Controllers\SearchController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -42,6 +43,8 @@ Route::get('/test-event', function () {
         'message' => 'Event sent',
     ]);
 })->name('test');
+
+Route::get('/search', SearchController::class)->name('search');
 
 Route::get('/test', function () {
     return Inertia::render('Test');
